@@ -40,9 +40,19 @@ registerApplication(
   // 应用名称
   'IMApp',
   // 加载功能（要加载的入口点）
-  () => { require('./im/index') },
+  () => import('./pages/im/index'),
   // 活动功能（判断是否加载应用程序的逻辑）
   location => location.pathname.startsWith('/im')
+);
+
+// 注册应用 
+registerApplication(
+  // 应用名称
+  'testApp',
+  // 加载功能（要加载的入口点）
+  () => import('./pages/test/index'),
+  // 活动功能（判断是否加载应用程序的逻辑）
+  location => location.pathname.startsWith('/test')
 );
 
 // 启动

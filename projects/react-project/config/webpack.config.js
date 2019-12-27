@@ -199,7 +199,7 @@ module.exports = function (webpackEnv) {
       // module chunks which are built will work in web workers as well.
       globalObject: 'this',
 
-      library: 'reactApp',
+      library: 'ReactApp',
       libraryTarget: "window"
     },
     // optimization: {

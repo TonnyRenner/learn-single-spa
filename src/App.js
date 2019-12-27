@@ -16,11 +16,14 @@ function App() {
           <Link to="/react">点我跳转至React.</Link>
           <br />
           <Link to="/im">点我跳转至IM.</Link>
+          <br />
+          <Link to="/test">点我跳转至TEST.</Link>
         </div>
 
         <div className="page-container">
           <div id="react-root"></div>
           <div id="im-root"></div>
+          <div id="test-root"></div>
         </div>
       </div>
     </Router>

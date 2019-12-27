@@ -64,8 +64,7 @@
   "scripts": {
     "start": "set PORT=8002 && node scripts/start.js",
     "http-server": "node scripts/http-server.js build 8002",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build": "node scripts/build.js"
   },
   "eslintConfig": {
     "extends": "react-app"
