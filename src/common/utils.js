@@ -1,12 +1,11 @@
-const loadJS = (src) => {
+const loadJS = (url) => {
   return new Promise((resolve, reject) => {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = src;
-    script.onerror = reject;
+    const script = document.createElement('script');
+    script.src = url;
     script.onload = resolve;
-    document.head.appendChild(script);
+    script.onerror = reject;
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
   });
 }
 

@@ -1,12 +1,8 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from 'react-router-dom';
-
-require('./App.css');
 
 function App() {
   return (
@@ -17,7 +13,7 @@ function App() {
           <br />
           <Link to="/im">点我跳转至IM.</Link>
           <br />
-          <Link to="/test">点我跳转至TEST.</Link>
+          {/* <Link to="/test">点我跳转至TEST.</Link> */}
         </div>
 
         <div className="page-container">

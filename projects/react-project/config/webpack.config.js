@@ -26,6 +26,7 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
+// const postCssConfig = require('./postcss.config');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -140,10 +141,6 @@ module.exports = function (webpackEnv) {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
-    // externals: {
-    //   'react': 'react',
-    //   'react-dom': 'react-dom'
-    // },
     devtool: isEnvProduction
       ? shouldUseSourceMap
         ? 'source-map'
@@ -349,6 +346,49 @@ module.exports = function (webpackEnv) {
           ],
           include: paths.appSrc,
         },
+        // {
+        //   test: /\.css$/,
+        //   use: [
+        //     { loader: require.resolve('style-loader') },
+        //     {
+        //       loader: require.resolve('css-loader'),
+        //       options: {
+        //         importLoaders: 1,
+        //         minimize: true,
+        //         sourceMap: true
+        //       }
+        //     },
+        //     {
+        //       loader: require.resolve('postcss-loader'),
+        //       options: postCssConfig
+        //     }
+        //   ]
+        //   // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+        // },
+        // // ** STOP ** Are you adding a new loader?
+        // // Remember to add the new extension(s) to the "file" loader exclusion list.
+        // {
+        //   test: /\.less$/,
+        //   use: [
+        //     require.resolve('style-loader'),
+        //     {
+        //       loader: require.resolve('css-loader')
+        //       // options: {
+        //       // 	importLoaders: 1
+        //       // }
+        //     },
+        //     {
+        //       loader: require.resolve('postcss-loader'),
+        //       options: postCssConfig
+        //     },
+        //     {
+        //       loader: require.resolve('less-loader'),
+        //       options: {
+        //         // modifyVars: getThemeConfig()
+        //       }
+        //     }
+        //   ]
+        // },
         {
           // "oneOf" will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
