@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SingleSpaReact from 'single-spa-react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
-import App from './App';
+import './single-spa.config';
 
-require('./index.css');
+ReactDOM.render((
+  <Router>
+    <div className="header">
+      <Link to="/page1">Link to page1.</Link>
+      <br />
+      <Link to="/im">Link to im.</Link>
+    </div>
 
-// const App = () => {
-//   return <h1>Test for single-spa.</h1>
-// }
-
-const reactLifecycles = SingleSpaReact({
-  React,
-  ReactDOM,
-  rootComponent: App,
-  domElementGetter: () => document.getElementById("root")
-});
-
-
-export const bootstrap = reactLifecycles.bootstrap;
-export const mount = reactLifecycles.mount;
-export const unmount = reactLifecycles.unmount;
+    <div id="react-app"></div>
+    <div id="im-app"></div>
+  </Router>
+), document.getElementById('root'));
